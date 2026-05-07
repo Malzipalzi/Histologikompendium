@@ -47,11 +47,11 @@
 
 <p>Immunhistokjemi.</p>
 
-<!-- HES -->
+<!-- HMWCK -->
 
-<h2>HES</h2>
+<h2>HMWCK</h2>
 
-<p>Beskrivelse av HES-farging.</p>
+<p>Beskrivelse.</p>
 
 <div id="hes-viewer" class="viewer"></div>
 
