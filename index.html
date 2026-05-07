@@ -1,85 +1,75 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Patologi-kompendium</title>
-
-    <script src="https://openseadragon.github.io/openseadragon/openseadragon.min.js"></script>
+    <title>Digitalt patologi-kompendium</title>
 
     <style>
+
         body {
             font-family: Arial, sans-serif;
             margin: 40px;
+            background-color: #f7f7f7;
         }
 
         h1 {
             color: darkred;
+            margin-bottom: 40px;
         }
 
-        h2 {
-            margin-top: 60px;
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            font-size: 22px;
         }
 
-        .viewer {
-            width: 100%;
-            height: 500px;
-            border: 1px solid lightgray;
-            margin-top: 10px;
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
         }
+
+        .section:hover {
+            background-color: #eeeeee;
+        }
+
     </style>
 </head>
 
 <body>
 
-<h1>Lever</h1>
+<h1>Digitalt patologi-kompendium</h1>
 
-<p>Digitale histologibilder med zoom.</p>
+<div class="section">
+    <a href="lever.html">Lever</a>
+</div>
 
-<!-- HES -->
+<div class="section">
+    <a href="nyre.html">Urinveier og nyre</a>
+</div>
 
-<h2>HES</h2>
+<div class="section">
+    <a href="magesekk.html">Magesekk og tarm</a>
+</div>
 
-<p>Beskrivelse av HES-farging.</p>
+<div class="section">
+    <a href="respiratorisk.html">Respiratorisk vev</a>
+</div>
 
-<div id="hes-viewer" class="viewer"></div>
+<div class="section">
+    <a href="hud.html">Hud</a>
+</div>
 
-<!-- PAS -->
+<div class="section">
+    <a href="bukspyttkjertel.html">Bukspyttkjertel</a>
+</div>
 
-<h2>PAS</h2>
-
-<p>Beskrivelse av PAS-farging.</p>
-
-<div id="pas-viewer" class="viewer"></div>
-
-<!-- AB-PAS -->
-
-<h2>AB-PAS</h2>
-
-<p>Beskrivelse av AB-PAS-farging.</p>
-
-<div id="abpas-viewer" class="viewer"></div>
-
-<script>
-
-OpenSeadragon({
-    id: "hes-viewer",
-    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
-});
-
-OpenSeadragon({
-    id: "pas-viewer",
-    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
-});
-
-OpenSeadragon({
-    id: "abpas-viewer",
-    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
-});
-
-</script>
+<div class="section">
+    <a href="galleblaere.html">Galleblære</a>
+</div>
 
 </body>
 </html>
