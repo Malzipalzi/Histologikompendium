@@ -47,7 +47,7 @@
 
 <p>Digitale histologibilder av magesekk og tarm.</p>
 
-<!-- HES -->
+<!-- spiserør -->
 
 <h2>HES</h2>
 
@@ -55,7 +55,7 @@
 
 <div id="spiserør-viewer" class="viewer"></div>
 
-<!-- PAS -->
+<!-- spiserør -->
 
 <h2>HES</h2>
 
@@ -63,13 +63,45 @@
 
 <div id="spiserør2-viewer" class="viewer"></div>
 
-<!-- AB-PAS -->
+<!-- magesekk -->
 
-<h2>AB-PAS</h2>
+<h2>HES</h2>
 
-<p>Beskrivelse av AB-PAS-farging.</p>
+<p>Magesekk.</p>
 
-<div id="abpas-viewer" class="viewer"></div>
+<div id="magesekk-viewer" class="viewer"></div>
+
+<!-- duodenum -->
+
+<h2>HES</h2>
+
+<p>Duodenum. Det kan sees kjertler i mucosa, som er karakteristisk for duodenum.</p>
+
+<div id="duodenum-viewer" class="viewer"></div>
+
+    <!-- tynntarm -->
+
+<h2>HES</h2>
+
+<p>Tynntarm farget med HES. Eldre snitt, med noe falmet farge.</p>
+
+<div id="tynntarm-viewer" class="viewer"></div>
+
+    <!-- tykktarm -->
+
+<h2>HES</h2>
+
+<p>Tykktarm med lymfeknute. Noe falmet snitt.</p>
+
+<div id="magesekk-viewer" class="viewer"></div>
+
+<!-- appendix -->
+
+<h2>HES</h2>
+
+<p>Appendix.</p>
+
+<div id="appendix-viewer" class="viewer"></div>
 
 <script>
 
@@ -86,11 +118,35 @@ OpenSeadragon({
 });
 
 OpenSeadragon({
-    id: "abpas-viewer",
+    id: "magesekk-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
+    tileSources: "magesekk.dzi"
 });
 
+OpenSeadragon({
+    id: "duodenum-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "duodenum.dzi"
+});
+
+    OpenSeadragon({
+    id: "tynntarm-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "tynntarm.dzi"
+});
+
+OpenSeadragon({
+    id: "tykktarm-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "tykktarm.dzi"
+});
+
+OpenSeadragon({
+    id: "appendix-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "appendix.dzi"
+});
+    
 </script>
 
 </body>
