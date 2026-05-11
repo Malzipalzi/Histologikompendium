@@ -51,17 +51,17 @@
 
 <h2>HES</h2>
 
-<p>Beskrivelse av HES-farging.</p>
+<p>Spiserør del 1.</p>
 
-<div id="hes-viewer" class="viewer"></div>
+<div id="spiserør-viewer" class="viewer"></div>
 
 <!-- PAS -->
 
-<h2>PAS</h2>
+<h2>HES</h2>
 
-<p>Beskrivelse av PAS-farging.</p>
+<p>Spiserør del 2. Viser kjertler i submucosa, som er karakteristisk for spiserør.</p>
 
-<div id="pas-viewer" class="viewer"></div>
+<div id="spiserør2-viewer" class="viewer"></div>
 
 <!-- AB-PAS -->
 
@@ -74,15 +74,15 @@
 <script>
 
 OpenSeadragon({
-    id: "hes-viewer",
+    id: "spiserør-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
+    tileSources: "spiseørhesdel1.dzi"
 });
 
 OpenSeadragon({
-    id: "pas-viewer",
+    id: "spiserør2-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
+    tileSources: "spiseørhesdel2.dzi"
 });
 
 OpenSeadragon({
