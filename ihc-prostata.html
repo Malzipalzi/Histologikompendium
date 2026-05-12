@@ -47,48 +47,92 @@
 
 <p>Immunhistokjemi.</p>
 
+<!-- HES -->
+
+<h2>Prostata med PIN</h2>
+
+<h2>HES</h2>
+
+<p>Snitt av prostata med PIN farget med HES.</p>
+
+<div id="prostata2hes-viewer" class="viewer"></div>
+
 <!-- HMWCK -->
 
-<h2>HMWCK</h2>
+<h2>HMWCK+p504s+p63</h2>
 
-<p>Beskrivelse.</p>
+<p>Snitt av prostata med PIN farget med HMWCKp504sp63.</p>
 
-<div id="HMWCK-viewer" class="viewer"></div>
+<div id="hmwck-viewer" class="viewer"></div>
 
-<!-- P63 -->
+<!-- NKX3.1 -->
 
-<h2>P63</h2>
+<h2>NKX3.1</h2>
 
-<p>Beskrivelse.</p>
+<p>Snitt av prostata med PIN farget med NKX3.1.</p>
 
-<div id="p63-viewer" class="viewer"></div>
+<div id="nkx-viewer" class="viewer"></div>
 
-<!-- P504s -->
+    <h2>Prostata med prostatakreft</h2>
 
-<h2>P504s</h2>
+<h2>HES</h2>
 
-<p>Beskrivelse.</p>
+<p>Snitt av prostata med prostatakreft farget med HES.</p>
 
-<div id="P504s-viewer" class="viewer"></div>
+<div id="prostata1hes-viewer" class="viewer"></div>
+
+<!-- HMWCK -->
+
+<h2>HMWCK+p504s+p63</h2>
+
+<p>Snitt av prostata med prostatakreft farget med HMWCKp504sp63.</p>
+
+<div id="hmwck1-viewer" class="viewer"></div>
+
+<!-- NKX3.1 -->
+
+<h2>NKX3.1</h2>
+
+<p>Snitt av prostata med prostatakreft farget med NKX3.1.</p>
+
+<div id="nkx1-viewer" class="viewer"></div>
 
 <script>
 
 OpenSeadragon({
-    id: "HMWCK-viewer",
+    id: "prostata2hes-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
+    tileSources: "bilder/prostata2hes.dzi"
 });
 
 OpenSeadragon({
-    id: "p63-viewer",
+    id: "hmwck-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
+    tileSources: "bilder/prostata2ckh.dzi"
 });
 
 OpenSeadragon({
-    id: "P504s-viewer",
+    id: "nkx-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
+    tileSources: "bilder/prostata2nkx.dzi"
+});
+
+    OpenSeadragon({
+    id: "prostata1hes-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/prostata1hes.dzi"
+});
+
+OpenSeadragon({
+    id: "hmwck1-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/prostata1ckh.dzi"
+});
+
+OpenSeadragon({
+    id: "nkx1-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/prostata1nkx.dzi"
 });
 
 </script>
