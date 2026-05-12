@@ -47,48 +47,267 @@
 
 <p>Immunhistokjemi.</p>
 
-<!-- E-cadherin -->
+                                <!-- normal -->
+    <h2>Normal bryst.</h2>
 
-<h2>E-cadherin</h2>
+<!-- HES -->
 
-<p>Beskrivelse.</p>
+<h2>HES</h2>
 
-<div id="hes-viewer" class="viewer"></div>
+<p>Normalt brystvev farget med HES.</p>
 
-<!-- P120 -->
+<div id="mammahes-viewer" class="viewer"></div>
 
-<h2>P120</h2>
+<!-- ecad -->
 
-<p>Beskrivelse.</p>
+<h2>ECAD+p120</h2>
 
-<div id="pas-viewer" class="viewer"></div>
+<p>Normalt brystvev farget med E-cadherin og p120.</p>
 
-<!-- HER2-, PR-, ØRpanel -->
+<div id="mammaecad-viewer" class="viewer"></div>
 
-<h2>HER2-, PR-, ØRpanel</h2>
+    <!-- p63ck5 -->
 
-<p>Beskrivelse av AB-PAS-farging.</p>
+<h2>p63+CK5</h2>
 
-<div id="abpas-viewer" class="viewer"></div>
+<p>Normalt brystvev farget med p63+CK5.</p>
+
+<div id="mammap63ck5-viewer" class="viewer"></div>
+
+<!-- ØR -->
+
+<h2>Østrogen</h2>
+
+<p>Normalt brystvev farget med ØR.</p>
+
+<div id="mammaør-viewer" class="viewer"></div>
+
+    <!-- PR -->
+
+<h2>Progesteron</h2>
+
+<p>Normalt brystvev farget med PR.</p>
+
+<div id="mammapr-viewer" class="viewer"></div>
+
+    <!-- HER2 -->
+
+<h2>HER2</h2>
+
+<p>Normalt brystvev farget med HER2.</p>
+
+<div id="mammaher2-viewer" class="viewer"></div>
+    
+                                              <!-- lobulært -->
+    <h2>Lobulært mammacarsinom.</h2>
+
+    <!-- HES -->
+
+<h2>HES</h2>
+
+<p>Lobulært mammacarsinom farget med HES.</p>
+
+<div id="mammahes2-viewer" class="viewer"></div>
+
+    <!-- ecad -->
+
+<h2>ECAD+p120</h2>
+
+<p>Lobulært mammacarsinom farget med E-cadherin+p120.</p>
+
+<div id="mammaecad2-viewer" class="viewer"></div>
+
+    <!-- p63 -->
+
+<h2>p63+CK5</h2>
+
+<p>Lobulært mammacarsinom farget med p63+CK5.</p>
+
+<div id="mammapr63ck52-viewer" class="viewer"></div>
+
+    <!-- ØR -->
+
+<h2>Østrogen</h2>
+
+<p>lobulært mammacarsinom farget med ØR.</p>
+
+<div id="mammaør2-viewer" class="viewer"></div>
+
+    <!-- PR -->
+
+<h2>Progesteron</h2>
+
+<p>Lobulært mammacarsinom farget med PR.</p>
+
+<div id="mammapr2-viewer" class="viewer"></div>
+
+    <!-- HER2 -->
+
+<h2>HER2</h2>
+
+<p>Lobulært mammacarsinom farget med HER2.</p>
+
+<div id="mammaher22-viewer" class="viewer"></div>
+
+                                                 <!-- ductalt -->
+     <h2>Ductalt mammacarsinom.</h2>
+
+    <!-- HES -->
+
+<h2>HES</h2>
+
+<p>Duktalt mammacarsinom farget med HES.</p>
+
+<div id="mammahes3-viewer" class="viewer"></div>
+
+    <!-- ecad -->
+
+<h2>ECAD+p120</h2>
+
+<p>Duktalt mammacarsinom farget med E-cadherin+p120.</p>
+
+<div id="mammaecad3-viewer" class="viewer"></div>
+
+    <!-- p63 -->
+
+<h2>p63+CK5</h2>
+
+<p>Duktalt mammacarsinom farget med p63+CK5.</p>
+
+<div id="mammapr63ck53-viewer" class="viewer"></div>
+
+    <!-- ØR -->
+
+<h2>Østrogen</h2>
+
+<p>Duktalt mammacarsinom farget med ØR.</p>
+
+<div id="mammaør3-viewer" class="viewer"></div>
+
+    <!-- PR -->
+
+<h2>Progesteron</h2>
+
+<p>Duktalt mammacarsinom farget med PR.</p>
+
+<div id="mammapr3-viewer" class="viewer"></div>
+
+    <!-- HER2 -->
+
+<h2>HER2</h2>
+
+<p>Duktalt mammacarsinom farget med HER2.</p>
+
+<div id="mammaher23-viewer" class="viewer"></div>
 
 <script>
 
 OpenSeadragon({
-    id: "hes-viewer",
+    id: "mammahes-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
+    tileSources: "bilder/mammahes.dzi"
 });
 
 OpenSeadragon({
-    id: "pas-viewer",
+    id: "mammaecad-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
+    tileSources: "bilder/mammaecad.dzi"
 });
 
 OpenSeadragon({
-    id: "abpas-viewer",
+    id: "mammap63ck5-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
+    tileSources: "bilder/mammap63ck5.dzi"
+});
+
+    OpenSeadragon({
+    id: "mammaør-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/mammaør.dzi"
+});
+
+OpenSeadragon({
+    id: "mammapr-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/mammapr.dzi"
+});
+
+OpenSeadragon({
+    id: "mammaher2-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/mammaher2.dzi"
+});
+
+    OpenSeadragon({
+    id: "mammahes2-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/mammahes2.dzi"
+});
+
+OpenSeadragon({
+    id: "mammaecad2-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/mammaecad2.dzi"
+});
+
+OpenSeadragon({
+    id: "mammap63ck52-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/mammap63ck52.dzi"
+});
+
+    OpenSeadragon({
+    id: "mammaør2-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/mammaør2.dzi"
+});
+
+OpenSeadragon({
+    id: "mammapr2-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/mammapr2.dzi"
+});
+
+OpenSeadragon({
+    id: "mammaher22-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/mammaher22.dzi"
+});
+
+    OpenSeadragon({
+    id: "mammahes3-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/mammahes3.dzi"
+});
+
+    OpenSeadragon({
+    id: "mammaecad3-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/mammaecad3.dzi"
+});
+
+    OpenSeadragon({
+    id: "mammap63ck53-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/mammap63ck5.dzi"
+});
+
+    OpenSeadragon({
+    id: "mammaør3-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/mammaør3.dzi"
+});
+
+    OpenSeadragon({
+    id: "mammapr3-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/mammapr3.dzi"
+});
+
+    OpenSeadragon({
+    id: "mammaher23-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/mammaher23.dzi"
 });
 
 </script>
