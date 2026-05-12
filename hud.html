@@ -47,48 +47,64 @@
 
 <p>Digitale histologibilder av hud.</p>
 
-<!-- HES -->
+<!-- Hudhår -->
 
 <h2>HES</h2>
 
-<p>Beskrivelse av HES-farging.</p>
+<p>Hud med talgkjertler og hårsekk.</p>
 
-<div id="hes-viewer" class="viewer"></div>
+<div id="hudmhår-viewer" class="viewer"></div>
 
-<!-- PAS -->
+<!-- hudsvette -->
+
+<h2>HES</h2>
+
+<p>Hud med svettekjertler.</p>
+
+<div id="hudmsvette-viewer" class="viewer"></div>
+
+<!-- hud pas basal -->
 
 <h2>PAS</h2>
 
-<p>Beskrivelse av PAS-farging.</p>
+<p>Hud farget med PAS. Viser basalmembran.</p>
 
-<div id="pas-viewer" class="viewer"></div>
+<div id="hudpasbasal-viewer" class="viewer"></div>
 
-<!-- AB-PAS -->
+<script>
 
-<h2>AB-PAS</h2>
+<!-- hud pas sopp -->
 
-<p>Beskrivelse av AB-PAS-farging.</p>
+<h2>PAS</h2>
 
-<div id="abpas-viewer" class="viewer"></div>
+<p>Hud farget med PAS. Viser PAS-positiv sopp i stratum corneum.</p>
+
+<div id="hudpassopp-viewer" class="viewer"></div>
 
 <script>
 
 OpenSeadragon({
-    id: "hes-viewer",
+    id: "hudmhår-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
+    tileSources: "bilder/hudmhår.dzi"
 });
 
 OpenSeadragon({
-    id: "pas-viewer",
+    id: "hudmsvette-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
+    tileSources: "bilder/hudmsvette.dzi"
 });
 
 OpenSeadragon({
-    id: "abpas-viewer",
+    id: "hudpasbasal-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
+    tileSources: "bilder/hudpasbasal.dzi"
+});
+
+    OpenSeadragon({
+    id: "hudpassopp-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/hudpassopp.dzi"
 });
 
 </script>
