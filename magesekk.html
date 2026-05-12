@@ -150,6 +150,14 @@
 <p>Tarm farget med masson trikrom. Snittet viser en tarmbiopsi tatt fra pasient med Chrons sykdom.</p>
 
 <div id="tarmmassont-viewer" class="viewer"></div>
+   
+    <!-- spiserør -->
+
+<h2>Laktase</h2>
+
+<p>Tynntarm farget med laktase.</p>
+
+<div id="laktase-viewer" class="viewer"></div>
 
 <script>
 
@@ -229,6 +237,12 @@ OpenSeadragon({
     id: "tarmmassont-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
     tileSources: "tarmmassont.dzi"
+});
+
+    OpenSeadragon({
+    id: "laktase-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "laktase.dzi"
 });
     
 </script>
