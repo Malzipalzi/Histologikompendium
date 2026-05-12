@@ -47,48 +47,62 @@
 
 <p>Digitale histologibilder av respiratorisk vev.</p>
 
-<!-- HES -->
+<!-- lungebronkie -->
 
 <h2>HES</h2>
 
-<p>Beskrivelse av HES-farging.</p>
+<p>Lunge. Viser bronkie.</p>
 
-<div id="hes-viewer" class="viewer"></div>
+<div id="lungebronkie-viewer" class="viewer"></div>
 
-<!-- PAS -->
+<!-- lungeresbronkiole -->
 
-<h2>PAS</h2>
+<h2>HES</h2>
 
-<p>Beskrivelse av PAS-farging.</p>
+<p>Viser respiratorisk bronkiole.</p>
 
-<div id="pas-viewer" class="viewer"></div>
+<div id="lungeresbronkiole-viewer" class="viewer"></div>
 
-<!-- AB-PAS -->
+<!-- lunge alveoler -->
 
-<h2>AB-PAS</h2>
+<h2>HES</h2>
 
-<p>Beskrivelse av AB-PAS-farging.</p>
+<p>Viser alveoler og brokioler.</p>
 
-<div id="abpas-viewer" class="viewer"></div>
+<div id="lungealveoler-viewer" class="viewer"></div>
+
+<!-- lunge gomori -->
+
+<h2>Gomori for retikulære fibre.</h2>
+
+<p>Viser lunge farget med Gomori fargemetode for retikulære fibre.</p>
+
+<div id="lungegomori-viewer" class="viewer"></div>
 
 <script>
 
 OpenSeadragon({
-    id: "hes-viewer",
+    id: "lungebronkie-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
+    tileSources: "lungebronkie.dzi"
 });
 
 OpenSeadragon({
-    id: "pas-viewer",
+    id: "lungeresbronkiole-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
+    tileSources: "lungeresbronkiole.dzi"
 });
 
 OpenSeadragon({
-    id: "abpas-viewer",
+    id: "lungealveoler-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"
+    tileSources: "lungealveoler.dzi"
+});
+
+    OpenSeadragon({
+    id: "levergomori-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "levergomori.dzi"
 });
 
 </script>
