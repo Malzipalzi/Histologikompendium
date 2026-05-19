@@ -23,7 +23,7 @@
         }
 
         .viewer {
-            width: 100%;
+            width: 90%;
             height: 500px;
             border: 1px solid lightgray;
             margin-top: 10px;
@@ -36,11 +36,66 @@
 
         .preview-image {
         width: 300px;
-        max-width: 100%;
+        height: 300px;
+        object-fit: cover; 
         border: 1px solid lightgray;
         margin-top: 10px;
         display: block;
+        cursor: pointer;
     }
+
+/* Popup background */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Popup image */
+.popup-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+    
+        .image-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.image-box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #555;
+}
 
     </style>
 </head>
@@ -59,9 +114,30 @@
 
 <h2>HES</h2>
 
-<p>Frisk lever, med portaltriader og sentralvener.</p>
+<p>Lever med portaltriader og sentralvener.</p>
 
-    <img src="bilder/leverhesportal.jpg" alt="HES lever med portaltriader" class="preview-image">
+    <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/leverhesportal.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Portaltriade i frisk lever. A: Portalvene. B: Portarterie. <br> 
+            C: Galleductus. D: Sinusoide. E: Hepatocytter. F: Kuphercelle.</p>
+    </div>
+
+    <div class="image-box">
+        <img src="bilder/leverhessentralvene.png" 
+             alt="Portalområde lever" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Sentralvene i lever. A: Sentralvene.</p>
+    </div>
+
+</div>
 
 <div id="hes-viewer" class="viewer"></div>
 
@@ -73,9 +149,14 @@
 
 <div id="pas-viewer" class="viewer"></div>
 
+<div id="imagePopup" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
 
+    <img id="popupImg" class="popup-content">
+</div> 
+    
 <script>
-
+    
 OpenSeadragon({
     id: "hes-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
@@ -88,6 +169,14 @@ OpenSeadragon({
     tileSources: "bilder/fettlever.dzi"
 });
 
+  function openPopup(src) {
+    document.getElementById("imagePopup").style.display = "block";
+    document.getElementById("popupImg").src = src;
+}
+
+function closePopup() {
+    document.getElementById("imagePopup").style.display = "none";
+}   
 
 </script>
 
