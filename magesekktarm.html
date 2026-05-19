@@ -34,6 +34,69 @@
             margin-bottom: 30px;
         }
 
+        .preview-image {
+        width: 300px;
+        height: 300px;
+        object-fit: cover; 
+        border: 1px solid lightgray;
+        margin-top: 10px;
+        display: block;
+        cursor: pointer;
+    }
+
+/* Popup background */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Popup image */
+.popup-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+    
+        .image-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.image-box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #555;
+}
+
     </style>
 </head>
 
@@ -61,6 +124,17 @@
 
 <p>Spiserør del 2. Viser kjertler i submucosa, som er karakteristisk for spiserør.</p>
 
+    <div class="image-box">
+        <img src="bilder/spiserør.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Spiserør/oesophagus. A: Mucosa. B: Submucosa <br>
+            C: Muscularis externa. D: Kjertler i submucosa.</p>
+    </div>
+</div>
+
 <div id="spiserør2-viewer" class="viewer"></div>
 
 <!-- magesekk -->
@@ -69,13 +143,64 @@
 
 <p>Magesekk.</p>
 
+  <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/magesekkoversikt.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Oversikt over magesekk. A: Mucosa. B: Submucosa. <br>
+        C: Muscularis externa.</p>
+    </div>
+
+        <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/Kubiskenlagaepitelmagesekk.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Magesekk. A: Kubisk enlaga plateepitel.</p>
+    </div>
+
+              <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/magesekkceller.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Magesekk med kjertler. A: Pariatale celler. <br> 
+        B: Hovedcelle. C: Mucoid halscelle.</p>
+    </div>
+</div>
+                        
+    
 <div id="magesekk-viewer" class="viewer"></div>
 
-<!-- duodenum -->
+    
+                    <!-- duodenum -->
 
 <h2>HES</h2>
 
 <p>Duodenum. Det kan sees kjertler i mucosa, som er karakteristisk for duodenum.</p>
+
+    <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/duodenum.png" 
+             alt="Duodenum" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Duodenum. A: Submucosa. B: Mucosa. C: Blodkar. <br>
+        D: Kjertler i submucosa. E: Muscularis mucosae. G: Gobletceller.</p>
+    </div>
+</div>
 
 <div id="duodenum-viewer" class="viewer"></div>
 
@@ -85,21 +210,71 @@
 
 <p>Tynntarm farget med HES. Eldre snitt, med noe falmet farge.</p>
 
+        <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/tynntarm.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Tynntarm. A: Gobletceller. B: Mikrovilli.</p>
+    </div>
+ </div>
+
 <div id="tynntarm-viewer" class="viewer"></div>
 
-    <!-- tykktarm -->
+    
+            <!-- tykktarm -->
 
 <h2>HES</h2>
 
 <p>Tykktarm med lymfeknute. Noe falmet snitt.</p>
 
+             <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/tykktarmgobletceller.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Tykktarm. A: Muosa. B: Submucosa. <br> 
+            C: Gobletceller.</p>
+    </div>
+
+                  <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/tykktarmlieberkhunsk.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Tykktarm. A: ieberkhunske krypter.</p>
+    </div>
+</div>
+
 <div id="tykktarm-viewer" class="viewer"></div>
 
-<!-- appendix -->
+
+                      <!-- appendix -->
 
 <h2>HES</h2>
 
 <p>Appendix.</p>
+
+             <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/appendix.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Appendix. A: Lymfoid vev, kalt germinale senter.</p>
+    </div>
+</div>
 
 <div id="appendix-viewer" class="viewer"></div>
 
@@ -148,7 +323,14 @@ OpenSeadragon({
     tileSources: "bilder/appendix.dzi"
 });
 
+function openPopup(src) {
+    document.getElementById("imagePopup").style.display = "block";
+    document.getElementById("popupImg").src = src;
+}
 
+function closePopup() {
+    document.getElementById("imagePopup").style.display = "none";
+}
     
 </script>
 
