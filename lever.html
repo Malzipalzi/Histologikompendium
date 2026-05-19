@@ -41,7 +41,42 @@
         border: 1px solid lightgray;
         margin-top: 10px;
         display: block;
+        cursor: pointer;
     }
+
+/* Popup background */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Popup image */
+.popup-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+    
         .image-row {
     display: flex;
     gap: 20px;
@@ -83,7 +118,8 @@
     <div class="image-box">
         <img src="bilder/leverhesportal.png" 
              alt="HES lever med portaltriader" 
-             class="preview-image">
+             class="preview-image"
+            onclick="openPopup(this.src)">
 
         <p class="caption">Portaltriade i frisk lever. A: Portalvene. B: Portarterie. <br> 
             C: Galleductus. D: Sinusoide. E: Hepatocytter. F: Kuphercelle.</p>
@@ -92,7 +128,8 @@
     <div class="image-box">
         <img src="bilder/leverhessentralvene.png" 
              alt="Portalområde lever" 
-             class="preview-image">
+             class="preview-image"
+            onclick="openPopup(this.src)">
 
         <p class="caption">Sentralvene i frisk lever. A: Sentralvene.</p>
     </div>
@@ -112,6 +149,15 @@
 
 <script>
 
+function openPopup(src) {
+    document.getElementById("imagePopup").style.display = "block";
+    document.getElementById("popupImg").src = src;
+}
+
+function closePopup() {
+    document.getElementById("imagePopup").style.display = "none";
+}
+    
 OpenSeadragon({
     id: "hes-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
