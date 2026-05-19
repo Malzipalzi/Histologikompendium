@@ -146,17 +146,13 @@
 
 <div id="pas-viewer" class="viewer"></div>
 
+<div id="imagePopup" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
 
+    <img id="popupImg" class="popup-content">
+</div> 
+    
 <script>
-
-function openPopup(src) {
-    document.getElementById("imagePopup").style.display = "block";
-    document.getElementById("popupImg").src = src;
-}
-
-function closePopup() {
-    document.getElementById("imagePopup").style.display = "none";
-}
     
 OpenSeadragon({
     id: "hes-viewer",
@@ -170,6 +166,14 @@ OpenSeadragon({
     tileSources: "bilder/fettlever.dzi"
 });
 
+  function openPopup(src) {
+    document.getElementById("imagePopup").style.display = "block";
+    document.getElementById("popupImg").src = src;
+}
+
+function closePopup() {
+    document.getElementById("imagePopup").style.display = "none";
+}   
 
 </script>
 
