@@ -34,6 +34,14 @@
             margin-bottom: 30px;
         }
 
+        .preview-image {
+        width: 300px;
+        max-width: 100%;
+        border: 1px solid lightgray;
+        margin-top: 10px;
+        display: block;
+    }
+
     </style>
 </head>
 
@@ -51,7 +59,9 @@
 
 <h2>HES</h2>
 
-<p>Frisk lever, med portaltriader og sentrlvener.</p>
+<p>Frisk lever, med portaltriader og sentralvener.</p>
+
+    <img src="bilder/leverhesportal.jpg" alt="HES lever med portaltriader" class="preview-image">
 
 <div id="hes-viewer" class="viewer"></div>
 
@@ -63,13 +73,6 @@
 
 <div id="pas-viewer" class="viewer"></div>
 
-<!-- AB-PAS -->
-
-<h2>Perls</h2>
-
-<p>Lever med jernavleiringer.</p>
-
-<div id="abpas-viewer" class="viewer"></div>
 
 <script>
 
@@ -85,11 +88,6 @@ OpenSeadragon({
     tileSources: "bilder/fettlever.dzi"
 });
 
-OpenSeadragon({
-    id: "abpas-viewer",
-    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "bilder/leverposperls.dzi"
-});
 
 </script>
 

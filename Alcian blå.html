@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Urinveier og nyre</title>
+    <title>Alcian blå spesialfarge</title>
 
     <script src="https://openseadragon.github.io/openseadragon/openseadragon.min.js"></script>
 
@@ -43,41 +43,40 @@
     <a href="index.html">← Tilbake til forsiden</a>
 </div>
 
-<h1>Urinveier og nyre</h1>
+<h1>Alcian blå</h1>
 
-<p>Digitale histologibilder av urinveier og nyre.</p>
+<p>Vev farget med Alcian blå.</p>
 
-<!-- HES -->
+    <!-- duodenum ab -->
 
-<h2>HES</h2>
+<h2>Alcian Blå</h2>
 
-<p>Nyrecortex med glomerulinøster og delvis synlig medulla.</p>
+<p>Duodenum farget med Alcian blå.</p>
 
-<div id="hes-viewer" class="viewer"></div>
+<div id="duodenumab-viewer" class="viewer"></div>
 
-<!-- PAS -->
+    <!-- GI AB -->
 
-<h2>HES</h2>
+<h2>Alcian Blå</h2>
 
-<p>Ureter.</p>
+<p>Gastrointestinal traktus farget med Alcian blå.</p>
 
-<div id="pas-viewer" class="viewer"></div>
-
+<div id="giab-viewer" class="viewer"></div>
 
 <script>
 
-OpenSeadragon({
-    id: "hes-viewer",
+
+    OpenSeadragon({
+    id: "duodenumab-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "bilder/nyrehes.dzi"
+    tileSources: "bilder/duodenumab.dzi"
 });
 
-OpenSeadragon({
-    id: "pas-viewer",
+    OpenSeadragon({
+    id: "giab-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "bilder/ureterhes.dzi"
+    tileSources: "bilder/giab.dzi"
 });
-
 
 </script>
 

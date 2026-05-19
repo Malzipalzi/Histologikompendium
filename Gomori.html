@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Urinveier og nyre</title>
+    <title>Gomori spesialfarge</title>
 
     <script src="https://openseadragon.github.io/openseadragon/openseadragon.min.js"></script>
 
@@ -43,41 +43,25 @@
     <a href="index.html">← Tilbake til forsiden</a>
 </div>
 
-<h1>Urinveier og nyre</h1>
+<h1>Gomori</h1>
 
-<p>Digitale histologibilder av urinveier og nyre.</p>
+<p>Vevssnitt farget med spesialfarge Gomori.</p>
 
-<!-- HES -->
+<!-- lunge gomori -->
 
-<h2>HES</h2>
+<h2>Gomori for retikulære fibre.</h2>
 
-<p>Nyrecortex med glomerulinøster og delvis synlig medulla.</p>
+<p>Viser lunge farget med Gomori fargemetode for retikulære fibre.</p>
 
-<div id="hes-viewer" class="viewer"></div>
-
-<!-- PAS -->
-
-<h2>HES</h2>
-
-<p>Ureter.</p>
-
-<div id="pas-viewer" class="viewer"></div>
-
+<div id="lungegomori-viewer" class="viewer"></div>
 
 <script>
 
 OpenSeadragon({
-    id: "hes-viewer",
-    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "bilder/nyrehes.dzi"
+id: "lungegomori-viewer",
+prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+tileSources: "bilder/lungegomori.dzi"
 });
-
-OpenSeadragon({
-    id: "pas-viewer",
-    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "bilder/ureterhes.dzi"
-});
-
 
 </script>
 

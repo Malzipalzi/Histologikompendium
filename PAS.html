@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Urinveier og nyre</title>
+    <title>PAS spesialfarge</title>
 
     <script src="https://openseadragon.github.io/openseadragon/openseadragon.min.js"></script>
 
@@ -43,42 +43,55 @@
     <a href="index.html">← Tilbake til forsiden</a>
 </div>
 
-<h1>Urinveier og nyre</h1>
+<h1>PAS spesialfarge</h1>
 
-<p>Digitale histologibilder av urinveier og nyre.</p>
-
-<!-- HES -->
-
-<h2>HES</h2>
-
-<p>Nyrecortex med glomerulinøster og delvis synlig medulla.</p>
-
-<div id="hes-viewer" class="viewer"></div>
-
-<!-- PAS -->
-
-<h2>HES</h2>
-
-<p>Ureter.</p>
-
-<div id="pas-viewer" class="viewer"></div>
+<p>Vev farget med PAS spesialfarge</p>
 
 
+<!-- tarm pas -->
+
+<h2>PAS</h2>
+
+<p>Tarm farget med PAS.</p>
+
+<div id="tarmpas-viewer" class="viewer"></div>
+
+<!-- hud pas basal -->
+
+<h2>PAS</h2>
+
+<p>Hud farget med PAS. Viser basalmembran.</p>
+
+<div id="hudpasbasal-viewer" class="viewer"></div>
+
+<!-- hud pas sopp -->
+
+<h2>PAS</h2>
+
+<p>Hud farget med PAS. Viser PAS-positiv sopp i stratum corneum.</p>
+
+<div id="hudpassopp-viewer" class="viewer"></div>
+    
 <script>
 
-OpenSeadragon({
-    id: "hes-viewer",
+    OpenSeadragon({
+    id: "tarmpas-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "bilder/nyrehes.dzi"
+    tileSources: "bilder/tarmpas.dzi"
 });
 
 OpenSeadragon({
-    id: "pas-viewer",
+    id: "hudpasbasal-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "bilder/ureterhes.dzi"
+    tileSources: "bilder/hudpasbasal.dzi"
 });
 
-
+    OpenSeadragon({
+    id: "hudpassopp-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/hudpassopp.dzi"
+});
+    
 </script>
 
 </body>
