@@ -43,24 +43,39 @@
     <a href="index.html">← Tilbake til forsiden</a>
 </div>
 
-<h1>Galleblære</h1>
+<h1>Vev farget med Alcian blå</h1>
 
-<p>Digitale histologibilder av galleblære.</p>
+<p>Vev farget med Alcian blå.</p>
 
-<!-- HES -->
+    <!-- duodenum ab -->
 
-<h2>HES</h2>
+<h2>Alcian Blå</h2>
 
-<p>Galleblære farget med HES.</p>
+<p>Duodenum farget med Alcian blå.</p>
 
-<div id="hes-viewer" class="viewer"></div>
+<div id="duodenumab-viewer" class="viewer"></div>
+
+    <!-- GI AB -->
+
+<h2>Alcian Blå</h2>
+
+<p>Gastrointestinal traktus farget med Alcian blå.</p>
+
+<div id="giab-viewer" class="viewer"></div>
 
 <script>
 
-OpenSeadragon({
-    id: "hes-viewer",
+
+    OpenSeadragon({
+    id: "duodenumab-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "bilder/galleblerehes.dzi"
+    tileSources: "bilder/duodenumab.dzi"
+});
+
+    OpenSeadragon({
+    id: "giab-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/giab.dzi"
 });
 
 </script>
