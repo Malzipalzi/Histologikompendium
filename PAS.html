@@ -55,12 +55,41 @@
 <p>Tarm farget med PAS.</p>
 
 <div id="tarmpas-viewer" class="viewer"></div>
+
+<!-- hud pas basal -->
+
+<h2>PAS</h2>
+
+<p>Hud farget med PAS. Viser basalmembran.</p>
+
+<div id="hudpasbasal-viewer" class="viewer"></div>
+
+<!-- hud pas sopp -->
+
+<h2>PAS</h2>
+
+<p>Hud farget med PAS. Viser PAS-positiv sopp i stratum corneum.</p>
+
+<div id="hudpassopp-viewer" class="viewer"></div>
+    
 <script>
 
     OpenSeadragon({
     id: "tarmpas-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
     tileSources: "bilder/tarmpas.dzi"
+});
+
+OpenSeadragon({
+    id: "hudpasbasal-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/hudpasbasal.dzi"
+});
+
+    OpenSeadragon({
+    id: "hudpassopp-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/hudpassopp.dzi"
 });
     
 </script>
