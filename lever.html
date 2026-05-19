@@ -41,6 +41,22 @@
         margin-top: 10px;
         display: block;
     }
+        .image-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.image-box {
+    text-align: center;
+}
+
+.caption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #555;
+}
 
     </style>
 </head>
@@ -61,7 +77,25 @@
 
 <p>Frisk lever, med portaltriader og sentralvener.</p>
 
-    <img src="bilder/leverhesportal.png" alt="HES lever med portaltriader" class="preview-image">
+    <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/leverhesportal.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image">
+
+        <p class="caption">Portaltriade i frisk lever. A: Portalvene. B: Portarterie. C: Galleductus. D: Sinusoide. E: Hepatocytter. F: Kuphercelle.</p>
+    </div>
+
+    <div class="image-box">
+        <img src="bilder/leverhessentralvene.png" 
+             alt="Portalområde lever" 
+             class="preview-image">
+
+        <p class="caption">Sentralvene.</p>
+    </div>
+
+</div>
 
 <div id="hes-viewer" class="viewer"></div>
 
