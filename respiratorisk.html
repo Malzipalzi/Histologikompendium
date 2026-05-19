@@ -34,6 +34,69 @@
             margin-bottom: 30px;
         }
 
+        .preview-image {
+        width: 300px;
+        height: 300px;
+        object-fit: cover; 
+        border: 1px solid lightgray;
+        margin-top: 10px;
+        display: block;
+        cursor: pointer;
+    }
+
+/* Popup background */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Popup image */
+.popup-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+    
+        .image-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.image-box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #555;
+}
+
     </style>
 </head>
 
@@ -47,27 +110,84 @@
 
 <p>Digitale histologibilder av respiratorisk vev.</p>
 
-<!-- lungebronkie -->
+
+    <!-- lungebronkie -->
 
 <h2>HES</h2>
 
 <p>Lunge. Viser bronkie.</p>
 
+    <div class="image-box">
+        <img src="bilder/bronkieoversikt.png" 
+             alt="Portalområde lever" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Bronkie. A: Bronkie lumen. B: Bruskskiver</p>
+    </div>
+
+    <div class="image-box">
+        <img src="bilder/Bronkiedetalj.png" 
+             alt="Portalområde lever" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Bronkie.</p>
+    </div>
+
+</div>
+
 <div id="lungebronkie-viewer" class="viewer"></div>
 
-<!-- lungeresbronkiole -->
+
+    <!-- lunge pulm bronkie -->
 
 <h2>HES</h2>
 
-<p>Viser respiratorisk bronkiole.</p>
+<p>Viser pulmonær bronkie.</p>
+
+    <div class="image-box">
+        <img src="bilder/bronkiepulmonær.png" 
+             alt="Portalområde lever" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Pulmonær bronkie. A: Adventitia. B: Perichondrium. C: Submucosa. <br> 
+            D: Mucosa. E: Hyalinbrusk. F: blodkar. G: Glatt muskulatur. <br> 
+            H: Falskt flerlaget sylinderepitel.</p>
+    </div>
+
+</div>
 
 <div id="lungeresbronkiole-viewer" class="viewer"></div>
 
-<!-- lunge alveoler -->
+
+    <!-- lunge alveoler -->
 
 <h2>HES</h2>
 
 <p>Viser alveoler og brokioler.</p>
+
+    <div class="image-box">
+        <img src="bilder/Bronkiolerespiratorisk.png" 
+             alt="Portalområde lever" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Respiratorisk bronkiole. A: Glatt muskulatur. <br>
+        B: Kubisk epitel/Claraceller.</p>
+    </div>
+
+    <div class="image-box">
+        <img src="bilder/Pneumocytt.png" 
+             alt="Portalområde lever" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Alveole. A: Pneumocytt type 1. B: Pneumocytt type 2.</p>
+    </div>
+
+</div>
 
 <div id="lungealveoler-viewer" class="viewer"></div>
 
@@ -91,6 +211,15 @@ OpenSeadragon({
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
     tileSources: "bilder/lungealveoler.dzi"
 });
+
+    function openPopup(src) {
+    document.getElementById("imagePopup").style.display = "block";
+    document.getElementById("popupImg").src = src;
+}
+
+function closePopup() {
+    document.getElementById("imagePopup").style.display = "none";
+}
 
 
 </script>
