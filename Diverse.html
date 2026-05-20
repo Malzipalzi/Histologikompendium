@@ -24,7 +24,7 @@
         }
 
         .viewer {
-            width: 100%;
+            width: 90%;
             height: 500px;
             border: 1px solid lightgray;
             margin-top: 10px;
@@ -52,16 +52,86 @@
 
 <h2>HES</h2>
 
-<p>Galleblære farget med HES.</p>
+<p>Binyre farget med HES.</p>
 
-<div id="hes-viewer" class="viewer"></div>
+<div id="1-viewer" class="viewer"></div>
+
+    <!-- HES -->
+
+<h2>HES</h2>
+
+<p>Hjerne farget med HES.</p>
+
+<div id="2-viewer" class="viewer"></div>
+
+    <!-- HES -->
+
+<h2>HES</h2>
+
+<p>Hjerte farget med HES.</p>
+
+<div id="3-viewer" class="viewer"></div>
+
+    <!-- HES -->
+
+<h2>Ukjent</h2>
+
+<p>Olfaktorisk region farget med ukjent fargemetode.</p>
+
+<div id="4-viewer" class="viewer"></div>
+
+    <!-- HES -->
+
+<h2>HES</h2>
+
+<p>Testikkel farget med HES.</p>
+
+<div id="5-viewer" class="viewer"></div>
+
+    <!-- HES -->
+
+<h2>HES</h2>
+
+<p>Tonsill farget med HES.</p>
+
+<div id="6-viewer" class="viewer"></div>
 
 <script>
 
 OpenSeadragon({
-    id: "hes-viewer",
+    id: "1-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "bilder/galleblerehes.dzi"
+    tileSources: "bilder/binyre.dzi"
+});
+
+    OpenSeadragon({
+    id: "2-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/hjerne.dzi"
+});
+
+    OpenSeadragon({
+    id: "3-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/hjerte.dzi"
+});
+
+    OpenSeadragon({
+    id: "4-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/olfaktorisk.dzi"
+});
+
+    OpenSeadragon({
+    id: "5-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/testikkel.dzi"
+});
+
+    OpenSeadragon({
+    id: "6-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/tonsill.dzi"
 });
 
 </script>
