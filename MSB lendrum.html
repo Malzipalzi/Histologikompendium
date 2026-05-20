@@ -34,6 +34,13 @@
             margin-bottom: 30px;
         }
 
+        .section-line {
+  border: none;
+  height: 2px;
+  background-color: #cccccc;
+  margin: 40px 0;
+}
+
     </style>
 </head>
 
@@ -47,13 +54,47 @@
 
 <p>Vevssnitt farget med spesialfarge MSB lendrum.</p>
 
+  
     <!-- tarm msb -->
+
+<h2>TARM, MSB LENDRUM</h2>
+
+<p>Tarmpolypp fra biopsi farget med MSB Lendrum.</p>
+
+<div id="tarmmsb-viewer" class="viewer"></div>
+
+    <hr class="section-line">
+
+
+    <!-- colon msb -->
+
+<h2>COLON, MSB LENDRUM</h2>
+
+<p>Colon farget med MSB Lendrum.</p>
+
+<div id="1-viewer" class="viewer"></div>
+
+    <hr class="section-line">
+
+
+    <!-- arterie msb -->
+
+<h2>ARTERIE, MSB LENDRUM</h2>
+
+<p>Arterie farget med MSB Lendrum.</p>
+
+<div id="2-viewer" class="viewer"></div>
+
+    <hr class="section-line">
+
+
+    <!-- tarm msb 2 -->
 
 <h2>TARM, MSB LENDRUM</h2>
 
 <p>Tarm farget med MSB Lendrum.</p>
 
-<div id="tarmmsb-viewer" class="viewer"></div>
+<div id="3-viewer" class="viewer"></div>
 
 <script>
 
@@ -63,6 +104,25 @@
     tileSources: "bilder/tarmmsb.dzi"
 });
 
+OpenSeadragon({
+    id: "1-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/colonmsb.dzi"
+});
+
+    OpenSeadragon({
+    id: "2-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/arteriemsb.dzi"
+});
+
+    OpenSeadragon({
+    id: "3-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/tarmmsb2.dzi"
+});
+
+    
 </script>
 
 </body>
