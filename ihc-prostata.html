@@ -34,6 +34,68 @@
             margin-bottom: 30px;
         }
         
+       .preview-image {
+        width: 700px;
+        height: 300px;
+        object-fit: cover; 
+        border: 1px solid lightgray;
+        margin-top: 10px;
+        display: block;
+        cursor: pointer;
+    }
+
+/* Popup background */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Popup image */
+.popup-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+    
+        .image-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.image-box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #555;
+} 
 
         .section-line {
   border: none;
@@ -55,7 +117,8 @@
 
 <p>Immunhistokjemi.</p>
 
-<!-- HES -->
+
+    <!-- HES -->
 
 <h2>Prostata med PIN</h2>
 
@@ -73,6 +136,20 @@
 <h2>HMWCK+p504s+p63</h2>
 
 <p>Snitt av prostata med PIN farget med HMWCKp504sp63.</p>
+
+    <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/prostpin.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Prostata med pin. Venstre: A: Kjertel farget med HES. <br>
+            Høyre: A: Kjertel farget med HMWCK+p504s og p63. Positiv for HMWCK+p504s. <br>
+            B: Delvis negativ HMWCK+p504s. C: Positiv p63.</p>
+    </div>
+</div>
 
 <div id="hmwck-viewer" class="viewer"></div>
 
@@ -107,11 +184,24 @@
 
 <p>Snitt av prostata med prostatakreft farget med HMWCKp504sp63.</p>
 
-<div id="hmwck1-viewer" class="viewer"></div>
-    <hr class="section-line">
+    <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/prostkreft.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Prostata med prostatakreft. Venstre: A: Kjertel farget med HES. <br>
+            Høyre: A: Kjertel farget med HMWCK+p504s og p63. Positiv for HMWCK+p504s, negativ for p63.</p>
+    </div>
+</div>
+
+    <div id="hmwck1-viewer" class="viewer"></div>
+    
+<hr class="section-line">
 
     
-
 <!-- NKX3.1 -->
 
 <h2>NKX3.1</h2>
@@ -119,6 +209,14 @@
 <p>Snitt av prostata med prostatakreft farget med NKX3.1.</p>
 
 <div id="nkx1-viewer" class="viewer"></div>
+
+
+    <div id="imagePopup" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+
+    <img id="popupImg" class="popup-content">
+</div>
+    
 
 <script>
 
@@ -157,6 +255,15 @@ OpenSeadragon({
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
     tileSources: "bilder/prost1nkx.dzi"
 });
+
+    function openPopup(src) {
+    document.getElementById("imagePopup").style.display = "block";
+    document.getElementById("popupImg").src = src;
+}
+
+function closePopup() {
+    document.getElementById("imagePopup").style.display = "none";
+} 
 
 </script>
 
