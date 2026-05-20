@@ -65,6 +65,7 @@
 
 <hr class="section-line">
     
+    
     <!-- hud pas basal -->
 
 <h2>HUD, PAS</h2>
@@ -75,6 +76,7 @@
 
 <hr class="section-line">
     
+    
     <!-- hud pas sopp -->
 
 <h2>HUD MED SOPP, PAS</h2>
@@ -82,6 +84,17 @@
 <p>Hud farget med PAS. Viser PAS-positiv sopp i stratum corneum.</p>
 
 <div id="hudpassopp-viewer" class="viewer"></div>
+
+    <hr class="section-line">
+
+   
+    <!-- hud pas sopp 2 -->
+
+<h2>HUD MED SOPP, PAS</h2>
+
+<p>Hud farget med PAS. Viser PAS-positiv sopp i stratum corneum.</p>
+
+<div id="hudpassopp2-viewer" class="viewer"></div>
     
 <script>
 
@@ -101,6 +114,12 @@ OpenSeadragon({
     id: "hudpassopp-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
     tileSources: "bilder/hudpassopp.dzi"
+});
+
+    OpenSeadragon({
+    id: "hudpassopp2-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/hudpassopp2.dzi"
 });
     
 </script>
