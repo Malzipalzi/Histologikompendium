@@ -34,6 +34,69 @@
             margin-bottom: 30px;
         }
 
+        .preview-image {
+        width: 500px;
+        height: 500px;
+        object-fit: cover; 
+        border: 1px solid lightgray;
+        margin-top: 10px;
+        display: block;
+        cursor: pointer;
+    }
+
+/* Popup background */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Popup image */
+.popup-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+    
+        .image-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.image-box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #555;
+}
+
     </style>
 </head>
 
@@ -43,25 +106,54 @@
     <a href="index.html">← Tilbake til forsiden</a>
 </div>
 
-<h1>Galleblære</h1>
+<h1>Congo rød</h1>
 
-<p>Digitale histologibilder av galleblære.</p>
+<p>Digitale histologibilder av snitt farget med Congo rød.</p>
 
 <!-- HES -->
 
 <h2>HES</h2>
 
-<p>Galleblære farget med HES.</p>
+<p>Snitt farget med congo rød.</p>
+    
+<div class="image-row">
 
-<div id="hes-viewer" class="viewer"></div>
+    <div class="image-box">
+        <img src="bilder/congoupolarisert.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
 
+        <p class="caption">Snitt farget med Congo rød sett uten <br> polarisert lys. A: Sammen punkt som i neste bilde.</p>
+    </div>
+
+    <div class="image-box">
+        <img src="bilder/congopolarisert.png" 
+             alt="Portalområde lever" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Snitt farget med Congo rød sett med <br> polarisert lys. A: Samme punkt som snitt over.</p>
+    </div>
+
+</div>
+
+<div id="imagePopup" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+
+    <img id="popupImg" class="popup-content">
+</div>
+    
 <script>
 
-OpenSeadragon({
-    id: "hes-viewer",
-    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
-    tileSources: "bilder/galleblerehes.dzi"
-});
+function openPopup(src) {
+    document.getElementById("imagePopup").style.display = "block";
+    document.getElementById("popupImg").src = src;
+}
+
+function closePopup() {
+    document.getElementById("imagePopup").style.display = "none";
+}
 
 </script>
 
