@@ -54,6 +54,7 @@
 
 <p>Vev farget med AB-PAS spesialfarge.</p>
 
+    
     <!-- tarmabpas -->
 
 <h2>TARM, AB-PAS</h2>
@@ -62,12 +63,46 @@
 
 <div id="tarmabpas-viewer" class="viewer"></div>
 
+    <hr class="section-line">
+
+
+    <!-- lungeabpas -->
+
+<h2>LUNGE, AB-PAS</h2>
+
+<p>Lunge farget med AB-PAS, med metastase fra adenocarsinom. </p>
+
+<div id="1-viewer" class="viewer"></div>
+
+    <hr class="section-line">
+
+
+    <!-- cervixabpas -->
+
+<h2>CERVIX, AB-PAS</h2>
+
+<p>Cervix farget med AB-PAS. Viser høygradig dysplasi i plateepitel, <br> CIN3/HSIL, med adenocarsinom in situ.</p>
+
+<div id="2-viewer" class="viewer"></div>
+
 <script>
 
     OpenSeadragon({
     id: "tarmabpas-viewer",
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
     tileSources: "bilder/tarmabpas.dzi"
+});
+
+    OpenSeadragon({
+    id: "1-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/lungeadeno.dzi"
+});
+
+    OpenSeadragon({
+    id: "2-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/cervixabpas.dzi"
 });
 
 
