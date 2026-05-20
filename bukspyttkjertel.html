@@ -23,7 +23,7 @@
         }
 
         .viewer {
-            width: 100%;
+            width: 90%;
             height: 500px;
             border: 1px solid lightgray;
             margin-top: 10px;
@@ -33,6 +33,69 @@
         .back {
             margin-bottom: 30px;
         }
+
+        .preview-image {
+        width: 300px;
+        height: 300px;
+        object-fit: contain; 
+        border: 1px solid lightgray;
+        margin-top: 10px;
+        display: block;
+        cursor: pointer;
+    }
+
+/* Popup background */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Popup image */
+.popup-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+    
+        .image-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.image-box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #555;
+}
 
     </style>
 </head>
@@ -47,14 +110,73 @@
 
 <p>Digitale histologibilder av bukspyttkjertel.</p>
 
-<!-- HES -->
+
+    <!-- pancreas -->
 
 <h2>HES</h2>
 
 <p>Pancreas med langerhanske øyer.</p>
 
-<div id="pancreashes-viewer" class="viewer"></div>
+    <div class="image-row">
 
+    <div class="image-box">
+        <img src="bilder/pancreas.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Pancreas. A: Langerhansk øy, endokrint vev. B: Eksokrint vev.</p>
+    </div>
+</div>
+
+<div id="pancreashes-viewer" class="viewer"></div>
+    
+
+     <!--Milt -->
+
+<h2>HES</h2>
+
+<p>Milt.</p>
+
+    <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/miltpulp.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Milt. A: Hvit pulp. B: Rød pulp.</p>
+    </div>
+
+        <div class="image-box">
+        <img src="bilder/miltpals.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Milt. A: PALS. B: Marginal sone.</p>
+    </div>
+
+        <div class="image-box">
+        <img src="bilder/miltgerminal.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Milt. A: Germinalt senter med pulpaarterie.</p>
+    </div>
+        
+</div>
+
+<div id="milt-viewer" class="viewer"></div>
+
+<div id="imagePopup" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+
+    <img id="popupImg" class="popup-content">
+</div>
+    
 <script>
 
 OpenSeadragon({
@@ -62,6 +184,21 @@ OpenSeadragon({
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
     tileSources: "bilder/pancreashes.dzi"
 });
+
+    OpenSeadragon({
+    id: "milt-viewer",
+    prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
+    tileSources: "bilder/milt.dzi"
+});
+
+    function openPopup(src) {
+    document.getElementById("imagePopup").style.display = "block";
+    document.getElementById("popupImg").src = src;
+}
+
+function closePopup() {
+    document.getElementById("imagePopup").style.display = "none";
+}
 
 </script>
 
