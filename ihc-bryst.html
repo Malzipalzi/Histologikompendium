@@ -34,6 +34,76 @@
             margin-bottom: 30px;
         }
 
+        .preview-image {
+        width: 300px;
+        height: 300px;
+        object-fit: cover; 
+        border: 1px solid lightgray;
+        margin-top: 10px;
+        display: block;
+        cursor: pointer;
+    }
+
+/* Popup background */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Popup image */
+.popup-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+    
+        .image-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.image-box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #555;
+}
+        
+.section-line {
+  border: none;
+  height: 2px;
+  background-color: #cccccc;
+  margin: 40px 0;
+}
+
         section-line {
   border: none;
   height: 2px;
@@ -54,7 +124,8 @@
 
 <p>Immunhistokjemi.</p>
 
-                                <!-- normal -->
+                            
+    <!-- normal -->
     <h2>Normal bryst.</h2>
 
 <!-- HES -->
@@ -74,6 +145,18 @@
 
 <p>Normalt brystvev farget med E-cadherin og p120. Snitt delvis ute av fokus.</p>
 
+    <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/Bryst1ECADP120.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Normalt brystvev. Positiv E-cadherin, og positiv p120 med membranlignende mønster.</p>
+    </div>
+</div>
+
 <div id="mammaecad-viewer" class="viewer"></div>
 
     <hr class="section-line">
@@ -83,7 +166,20 @@
 
 <h2>p63+CK5</h2>
 
-<p>Normalt brystvev farget med p63+CK5.</p>
+<p>Normalt brystvev farget med p63+CK5. Snitt delvis ute av fokus.</p>
+
+  <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/bryst1p63+ck5.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Portaltriade i frisk lever. A: Portalvene. B: Portarterie. <br> 
+            C: Galleductus. D: Sinusoide. E: Hepatocytter. F: Kuphercelle.</p>
+    </div>  
+</div>
 
 <div id="mammap63ck5-viewer" class="viewer"></div>
 
@@ -141,6 +237,18 @@
 
 <p>Lobulært mammacarsinom farget med E-cadherin+p120.</p>
 
+    <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/Bryst2ECADp120.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Lobulært mammacarsinom med positiv p120 i cellekjerner, negativ E-cadherin.</p>
+    </div>
+</div>
+
 <div id="mammaecad2-viewer" class="viewer"></div>
 
     <hr class="section-line">
@@ -189,6 +297,7 @@
 
     <hr class="section-line">
 
+    
                                                  <!-- ductalt -->
      <h2>Ductalt mammacarsinom.</h2>
 
@@ -209,6 +318,19 @@
 
 <p>Duktalt mammacarsinom farget med E-cadherin+p120.</p>
 
+    <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/Bryst3ECADp120.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Duktalt mammacarsinom med negativ p120 i kjernen og positiv <br>
+            ECAD i membranlignende mønster.</p>
+    </div>
+</div>
+
 <div id="mammaecad3-viewer" class="viewer"></div>
 
     <hr class="section-line">
@@ -219,6 +341,18 @@
 <h2>p63+CK5</h2>
 
 <p>Duktalt mammacarsinom farget med p63+CK5.</p>
+
+    <div class="image-row">
+
+    <div class="image-box">
+        <img src="bilder/Bryst3P63+CK5.png" 
+             alt="HES lever med portaltriader" 
+             class="preview-image"
+            onclick="openPopup(this.src)">
+
+        <p class="caption">Duktalt mammacarsinom med negativ p63 og CK5.</p>
+    </div>
+ </div>
 
 <div id="mammap63ck53-viewer" class="viewer"></div>
 
@@ -254,6 +388,13 @@
 
 <div id="mammaher23-viewer" class="viewer"></div>
 
+    
+    <div id="imagePopup" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+
+    <img id="popupImg" class="popup-content">
+
+        
 <script>
 
 OpenSeadragon({
@@ -363,6 +504,15 @@ OpenSeadragon({
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
     tileSources: "bilder/mammaher23.dzi"
 });
+
+    function openPopup(src) {
+    document.getElementById("imagePopup").style.display = "block";
+    document.getElementById("popupImg").src = src;
+}
+
+function closePopup() {
+    document.getElementById("imagePopup").style.display = "none";
+}
 
 </script>
 
