@@ -34,10 +34,10 @@
             margin-bottom: 30px;
         }
 
-        .preview-image {
+    .preview-image {
         width: 300px;
         height: 300px;
-        object-fit: cover; 
+        object-fit: contain; 
         border: 1px solid lightgray;
         margin-top: 10px;
         display: block;
@@ -126,6 +126,8 @@
 
 <p>Spiserør del 2. Viser kjertler i submucosa, som er karakteristisk for spiserør.</p>
 
+    <div class="image-row">
+        
     <div class="image-box">
         <img src="bilder/spiserør.png" 
              alt="HES lever med portaltriader" 
@@ -158,8 +160,6 @@
         C: Muscularis externa.</p>
     </div>
 
-        <div class="image-row">
-
     <div class="image-box">
         <img src="bilder/Kubiskenlagaepitelmagesekk.png" 
              alt="HES lever med portaltriader" 
@@ -168,8 +168,6 @@
 
         <p class="caption">Magesekk. A: Kubisk enlaga plateepitel.</p>
     </div>
-
-              <div class="image-row">
 
     <div class="image-box">
         <img src="bilder/magesekkceller.png" 
@@ -183,7 +181,6 @@
 
 </div>
                         
-    
 <div id="magesekk-viewer" class="viewer"></div>
 
     
@@ -241,7 +238,7 @@
              <div class="image-row">
 
     <div class="image-box">
-        <img src="bilder/tykktarmgobletceller.png" 
+        <img src="bilder/tykktarmgobletcell.png" 
              alt="HES lever med portaltriader" 
              class="preview-image"
             onclick="openPopup(this.src)">
@@ -250,7 +247,6 @@
             C: Gobletceller.</p>
     </div>
 
-                  <div class="image-row">
 
     <div class="image-box">
         <img src="bilder/tykktarmlieberkhunsk.png" 
@@ -287,6 +283,11 @@
 
 <div id="appendix-viewer" class="viewer"></div>
 
+    <div id="imagePopup" class="popup">
+    <span class="close" onclick="closePopup()">&times;</span>
+
+    <img class="popup-content" id="popupImg">
+</div>
 
 <script>
 
